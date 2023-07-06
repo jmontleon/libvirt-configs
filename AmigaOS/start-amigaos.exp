@@ -1,0 +1,17 @@
+#!/usr/bin/expect -f
+
+set timeout 30
+spawn $env(SHELL)
+match_max 100000
+expect  "\$ "
+send -- "virsh --connect=qemu:///session console AmigaOS --force\r"
+expect  "(Ctrl + \])\r"
+send -- "\r"
+expect "ok "
+send -- "boot hd:0 amigaboot.of\r"
+expect -- "finished"
+send -- ""
+expect  "\$ "
+exit 
+expect eof
+exit 0

@@ -1,0 +1,11 @@
+[Unit]
+Description=Connect to AmigaOS serial console and Boot
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 10 
+ExecStart=/usr/bin/expect /usr/local/bin/start-amigaos.exp
+RemainAfterExit=no

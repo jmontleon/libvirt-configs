@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [[ $1 == "AmigaOS" ]] && [[ $2 == "started" ]]
+then
+  sudo systemctl -M $USER@ --user start boot-amigaos.service --no-block
+fi
