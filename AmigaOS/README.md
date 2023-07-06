@@ -21,4 +21,4 @@ For audio I just went to AHI in Prefs, selected `Unit 0` from the drop down that
   
 For network I just selected the rtl8139 driver and configured it to use DHCP.
 
-[img]screeshot.png[/img]
+![img]screenshot[/img](https://github.com/jmontleon/libvirt-configs/blob/main/AmigaOS/screenshot.png?raw=true)
