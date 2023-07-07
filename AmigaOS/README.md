@@ -1,6 +1,5 @@
 # AmigaOS 4.1
 
-## Usage
 These instructions are adapted from:  
 https://www.amiga-news.de/en/news/AN-2023-04-00086-EN.html  
 
@@ -21,5 +20,9 @@ Some things I noted during install and initial setup:
 http://zero.eik.bme.hu/~balaton/qemu/amiga/aos_lowres_mode.html  
 - For audio I had to open AHI in Prefs, selected `Unit 0` from the drop down that says `Music unit` and selected `VIA-AC97: 16-bit stereo++` to get audio to work.
 - For network I just selected the rtl8139 driver and configured it to use DHCP.
-  
+
+# Links
+https://www.hyperion-entertainment.com/
+https://en.wikipedia.org/wiki/AmigaOS_4
+
 ![screenshot](https://github.com/jmontleon/libvirt-configs/blob/main/AmigaOS/screenshot.png?raw=true)
