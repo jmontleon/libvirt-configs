@@ -20,6 +20,8 @@ Some things I noted during install and initial setup:
 http://zero.eik.bme.hu/~balaton/qemu/amiga/aos_lowres_mode.html  
 - For audio I had to open AHI in Prefs, selected `Unit 0` from the drop down that says `Music unit` and selected `VIA-AC97: 16-bit stereo++` to get audio to work.
 - For network I just selected the rtl8139 driver and configured it to use DHCP.
+- RAM is currently limited to 1GB.
+- Some SDL applications don't display correctly. Switching to the g3 processor from 7447 can work around this.
 
 # Links
 https://www.hyperion-entertainment.com/  
