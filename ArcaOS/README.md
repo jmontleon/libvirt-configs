@@ -7,7 +7,7 @@ I follow the instructions to install in VirtualBox. Afterwards I convert the dis
 Once the disk is converted it boots and works normally with a configuration like the one here. Just replace %%DISK in the domain xml before running virsh define. Graphics, audio, and network all work fine. Using SATA causes problems for me so I use IDE here.
 
 # Links
-https://www.arcanoae.com/
-https://en.wikipedia.org/wiki/ArcaOS
-
+https://www.arcanoae.com/  
+https://en.wikipedia.org/wiki/ArcaOS  
+  
 ![screenshot](https://github.com/jmontleon/libvirt-configs/blob/main/ArcaOS/screenshot.png?raw=true)

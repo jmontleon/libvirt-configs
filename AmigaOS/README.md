@@ -22,7 +22,7 @@ http://zero.eik.bme.hu/~balaton/qemu/amiga/aos_lowres_mode.html
 - For network I just selected the rtl8139 driver and configured it to use DHCP.
 
 # Links
-https://www.hyperion-entertainment.com/
-https://en.wikipedia.org/wiki/AmigaOS_4
-
+https://www.hyperion-entertainment.com/  
+https://en.wikipedia.org/wiki/AmigaOS_4  
+  
 ![screenshot](https://github.com/jmontleon/libvirt-configs/blob/main/AmigaOS/screenshot.png?raw=true)
