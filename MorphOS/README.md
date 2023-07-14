@@ -2,6 +2,8 @@
 
 These instructions are adapted from:  
 https://www.amiga-news.de/en/news/AN-2023-04-00086-EN.html  
+
+It will be necessary to gather the pegasos2 rom as described on the page above.
   
 MorphOS is free to use in a VM but it will start to slow down after 30 minutes and become unusable after some time. It is not possible to register MorphOS from within a VM.  
 
