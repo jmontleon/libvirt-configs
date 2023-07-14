@@ -1,0 +1,11 @@
+[Unit]
+Description=Connect to MorphOS serial console and Boot
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 10 
+ExecStart=/usr/bin/expect /usr/local/bin/start-morphos.exp
+RemainAfterExit=no

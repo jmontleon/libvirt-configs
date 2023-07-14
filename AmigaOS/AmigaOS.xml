@@ -47,18 +47,14 @@
   <qemu:commandline>
     <qemu:arg value='-bios'/>
     <qemu:arg value='%%ROM'/>
-    <qemu:arg value='-cpu'/>
-    <qemu:arg value='7447'/>
     <qemu:arg value='-vga'/>
     <qemu:arg value='none'/>
     <qemu:arg value='-drive'/>
     <qemu:arg value='if=none,id=hd,format=qcow2,file=%%DISK'/>
     <qemu:arg value='-device'/>
     <qemu:arg value='ide-hd,drive=hd,bus=ide.0'/>
-    <qemu:arg value='-drive'/>
-    <qemu:arg value='if=none,id=cd,format=raw,file=%%ISO'/>
-    <qemu:arg value='-device'/>
-    <qemu:arg value='ide-cd,drive=cd,bus=ide.1'/>
+    <qemu:arg value="-drive"/>
+    <qemu:arg value="if=ide,bus=1,media=cdrom,file=%%ISO"/>
     <qemu:arg value='-global'/>
     <qemu:arg value='via-ac97.audiodev=audio1'/>
   </qemu:commandline>

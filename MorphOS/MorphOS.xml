@@ -1,0 +1,82 @@
+<domain type='qemu' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
+  <name>MorphOS</name>
+  <memory unit='KiB'>1048576</memory>
+  <currentMemory unit='KiB'>1048576</currentMemory>
+  <vcpu placement='static'>1</vcpu>
+  <os>
+    <type arch='ppc' machine='pegasos2'>hvm</type>
+    <boot dev='hd'/>
+  </os>
+  <clock offset='localtime'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/qemu-system-ppc</emulator>
+    <controller type='pci' index='0' model='pci-root'/>
+    <controller type='pci' index='1' model='pci-bridge'>
+      <model name='pci-bridge'/>
+      <target chassisNr='1'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x0'/>
+    </controller>
+    <controller type='usb' index='0' model='piix3-uhci'>
+      <address type='pci' domain='0x0000' bus='0x01' slot='0x01' function='0x0'/>
+    </controller>
+    <interface type='user'>
+      <mac address='52:54:00:46:f2:ff'/>
+      <model type='ne2k_pci'/>
+      <address type='pci' domain='0x0000' bus='0x01' slot='0x02' function='0x0'/>
+    </interface>
+    <serial type='pty'>
+      <target port='0'/>
+    </serial>
+    <console type='pty'>
+      <target type='serial' port='0'/>
+    </console>
+    <input type='mouse' bus='usb'>
+      <address type='usb' bus='0' port='1'/>
+    </input>
+    <input type='keyboard' bus='usb'>
+      <address type='usb' bus='0' port='2'/>
+    </input>
+    <graphics type='spice' autoport='yes'>
+      <listen type='address'/>
+    </graphics>
+    <sound model='ac97'>
+      <address type='pci' domain='0x0000' bus='0x01' slot='0x03' function='0x0'/>
+    </sound>
+    <audio id='1' type='spice'/>
+    <video>
+      <model type='bochs' vram='16384' heads='1' primary='yes'/>
+      <alias name='ua-video'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/>
+    </video>
+    <memballoon model='virtio'>
+      <address type='pci' domain='0x0000' bus='0x01' slot='0x04' function='0x0'/>
+    </memballoon>
+  </devices>
+  <qemu:commandline>
+    <qemu:arg value='-bios'/>
+    <qemu:arg value='%%ROM'/>
+    <qemu:arg value='-drive'/>
+    <qemu:arg value='if=none,id=hd,format=qcow2,file=%%DISK'/>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='ide-hd,drive=hd,bus=ide.0'/>
+    <qemu:arg value='-drive'/>
+    <qemu:arg value='if=ide,bus=1,media=cdrom,file=%%ISO'/>
+    <qemu:arg value='-global'/>
+    <qemu:arg value='via-ac97.audiodev=audio1'/>
+  </qemu:commandline>
+  <qemu:override>
+    <qemu:device alias='ua-video'>
+      <qemu:frontend>
+        <qemu:property name='driver' type='string' value='ati-vga'/>
+        <qemu:property name='romfile' type='string' value=''/>
+        <qemu:property name='guest_hwcursor' type='bool' value='true'/>
+        <qemu:property name='vgamem_mb' type='unsigned' value='128'/>
+        <qemu:property name='vgamem' type='remove'/>
+      </qemu:frontend>
+    </qemu:device>
+  </qemu:override>
+</domain>
+

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [[ $1 == "MorphOS" ]] && [[ $2 == "started" ]]
+then
+  sudo systemctl -M $USER@ --user start boot-morphos.service --no-block
+fi
