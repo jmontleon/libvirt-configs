@@ -7,7 +7,7 @@ It will be necessary to gather the pegasos2 rom as described on the page above.
   
 MorphOS is free to use in a VM but it will start to slow down after 30 minutes and become unusable after some time. It is not possible to register MorphOS from within a VM.  
 
-For audio and network to work you must use QEMU 8+. To resolve a shutdown issue you must use 8.1+. Networking will initially be broken until a workaround is implemented post-install.
+For audio and network to work you must use QEMU 8+. To resolve a shutdown issue you must use 8.1+. Networking will initially be broken until a workaround is implemented post-install. MorphOS uses PPC emulation so ensure you have qemu-system-ppc installed.  
   
 Once these files are available, update `%%ROM`, `%%DISK`, and `%%ISO` in the domain file, `MorphOS.xml`, with values that make sense for your environment.  
   

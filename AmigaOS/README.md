@@ -5,7 +5,7 @@ https://www.amiga-news.de/en/news/AN-2023-04-00086-EN.html
 
 It will be necessary to generate a custom ISO and gather the pegasos2 rom as described on the page above.  
   
-You will also need to have QEMU 8 installed. Additionally, QEMU 8.1 fixes a shutdown bug.  
+You will also need to have QEMU 8 installed. Additionally, QEMU 8.1 fixes a shutdown bug. AmigaOS uses PPC emulation so ensure you have qemu-system-ppc installed.  
   
 Once these files are available, update `%%ROM`, `%%DISK`, and `%%ISO` in the domain file, `AmigaOS.xml`, with values that make sense for your environment.  
   
